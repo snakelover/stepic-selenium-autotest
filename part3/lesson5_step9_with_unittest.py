@@ -3,7 +3,7 @@ import time
 from selenium import webdriver
 
 
-def test_registration(link):
+def check_registration(link):
     browser = webdriver.Chrome()
     browser.get(link)
 
@@ -28,11 +28,11 @@ def test_registration(link):
 class TestRegistration(unittest.TestCase): 
     def test_registration1(self):
         link = "http://suninjuly.github.io/registration1.html"
-        self.assertEqual(test_registration(link), "Поздравляем! Вы успешно зарегистировались!", "Registration failed")
+        self.assertEqual(check_registration(link), "Поздравляем! Вы успешно зарегистировались!", "Registration failed")
 
     def test_registration2(self):
         link = "http://suninjuly.github.io/registration2.html"
-        self.assertEqual(test_registration(link), "Поздравляем! Вы успешно зарегистировались!", "Registration failed")
+        self.assertEqual(check_registration(link), "Поздравляем! Вы успешно зарегистировались!", "Registration failed")
 
 if __name__ == "__main__":
     unittest.main()
